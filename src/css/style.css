@@ -1,0 +1,511 @@
+@font-face {
+    font-family: 'Kanit';
+    src: url('../../assets/fonts/Kanit/Kanit-Light.ttf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit';
+    outline: none;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    flex-wrap: wrap;
+}
+
+#navbar-container {
+    flex: 1;
+    background-color: #16f;
+    box-shadow: 1px 1px 3px #33333340;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 1.5rem 0;
+}
+
+#main-container {
+    flex: 4;
+    height: 100vh;
+    overflow: auto;
+}
+
+.button-style {
+    padding: 0 1.5rem;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: .8rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.button-style:hover {
+    background-color: #13f;
+}
+
+.button-style.selected {
+    background-color: #13f;
+}
+
+.section {
+    padding: 2rem;
+}
+
+.section h2 {
+    text-transform: uppercase;
+    font-size: .9rem;
+    user-select: none;
+}
+
+.section-container {
+    height: auto;
+    margin-top: 30px;
+}
+
+.navbar-section-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    border-bottom: 1px solid #33333320;
+    padding-bottom: 1.5rem;
+}
+
+.style-button-navbar-section {
+    height: 30px;
+    width: 80px;
+    padding: .3rem;
+    border: none;
+    font-size: .7rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.style-button-navbar-section:hover {
+    opacity: .9;
+}
+
+#button-adicionar-produto {
+    background-color: #16f;
+    color: #fff;
+    outline: none;
+    user-select: none;
+}
+
+
+#produtos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+.produto {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #33333320;
+    padding: 1rem;
+    transition: .2s ease;
+}
+
+.produto:hover {
+    background-color: #f8f8f8;
+}
+
+.produto .nome-produto {
+    font-size: .8rem;
+    font-weight: lighter;
+}
+
+.acoes {
+    display: flex;
+}
+
+.button-style-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0 .2rem;
+    opacity: .6;
+}
+
+.button-style-acoes i {
+    font-size: 1rem;
+    transition: .2s;
+}
+
+.button-editar i:hover {
+    color: #13f;
+}
+
+.button-remover i:hover {
+    color: #ff1111;
+}
+
+.button-info i:hover {
+    color: orange;
+}
+
+#produtos {
+    position: relative;
+}
+
+#section-adicionar-produto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 50%;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px #33333340;
+    transition: .3s ease-in;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: .5rem;
+    gap: 5px;
+}
+
+#section-adicionar-produto.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#container-inputs-produto {
+    flex: 5;
+    width: 100%;
+    padding: .7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#container-button-section-adicionar-produto {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .5rem;
+}
+
+.box-container-input {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+input[type="text"] {
+    height: 35px;
+    background-color: transparent;
+    border: none;
+    border: 1px solid #33333330;
+    outline: none;
+    font-size: .7rem;
+    width: 200px;
+    padding: 0 .4rem;
+    border-radius: 5px;
+}
+
+.title-input {
+    font-size: .8rem;
+}
+
+.mensagem-info {
+    font-size: .7rem;
+    margin-top: 20px;
+    text-align: center;
+    transition: .3s ease;
+    opacity: 0;
+    height: +10px;
+}
+
+.mensagem-info.show {
+    opacity: 1;
+}
+
+.button-style-section-adicionar {
+    height: 35px;
+    cursor: pointer;
+    border: none;
+    width: 70px;
+    color: #f1f1f1;
+    font-size: .7rem;
+    border-radius: 3px;
+}
+
+.button-style-section-adicionar:hover {
+    opacity: .9;
+}
+
+#button-cancelar-adicao-produto {
+    background-color: #ff1111;
+}
+
+#button-efetivar-adicao-produto {
+    background-color: #13f;
+}
+
+#section-info-produto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 50%;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px #33333340;
+    transition: .3s ease-in;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    padding: 1rem 1rem 0 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#section-info-produto.show {
+    pointer-events: all;
+    opacity: 1;
+}
+
+#section-info-produto h2 {
+    font-size: .8rem;
+    font-weight: lighter;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #33333320;
+}
+
+#section-container-info {
+    margin-top: 20px;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#informacoes-produto {
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+}
+
+.box-container-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.style-info-produto {
+    font-size: .7rem;
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin: 0 1rem;
+}
+
+.style-info-produto span {
+    font-weight: bold;
+}
+
+#container-button-info-produto {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#button-voltar-section-info {
+    height: 35px;
+    cursor: pointer;
+    border: none;
+    width: 70px;
+    color: #f1f1f1;
+    font-size: .7rem;
+    border-radius: 3px;
+    background-color: #ff1111;
+}
+
+#button-voltar-section-info:hover {
+    opacity: .9;
+}
+
+#section-editar-produto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 50%;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px #33333340;
+    transition: .3s ease-in;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    padding: 1rem 1rem 0 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;   
+}
+
+#section-editar-produto.show {
+    pointer-events: all;
+    opacity: 1;
+}
+
+#section-editar-produto h2 {
+    font-size: .8rem;
+    font-weight: lighter;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #33333320;
+}
+
+#section-container-editar {
+    margin-top: 20px;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#edicao-produto {
+    flex: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#edicao-produto input {
+    margin: 0 10px;
+}
+
+#container-button-editar-produto {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .5rem;
+}
+
+.button-style-section-editar {
+    height: 35px;
+    cursor: pointer;
+    border: none;
+    width: 70px;
+    color: #f1f1f1;
+    font-size: .7rem;
+    border-radius: 3px;
+}
+
+.button-style-section-editar:hover {
+    opacity: .9;
+}
+
+#button-voltar-section-editar {
+    background-color: #ff1111;
+}
+
+#button-atualizar-section-editar {
+    background-color: #13f;
+}
+
+#nome-produto-edicao {
+    font-weight: bold;
+}
+
+#section-container-atualizacoes {
+    margin-top: 15px;
+    border-bottom: 1px solid #33333320;
+}
+
+#atualizacoes-produtos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+#section-container-clientes {
+    margin-top: 15px;
+    border-bottom: 1px solid #33333320;
+}
+
+#clientes-api {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+.cliente {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #33333320;
+    padding: 1rem;
+    transition: .2s ease;
+    font-size: .8rem;
+    text-transform: uppercase;
+}
+
+.cliente:hover {
+    background-color: #f8f8f8;
+}
+
+.nome-cliente span,
+.email-cliente span,
+.usuario-cliente span {
+    font-weight: bold;
+}
+
+.nome-cliente-container {
+    flex: 1.3;
+}
+
+.outras-informacoes-cliente {
+    display: flex;
+    flex: 2;
+    align-items: center;
+    justify-content: space-between;
+}

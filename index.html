@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Controle Produtos</title>
+</head>
+<body>
+    <nav id="navbar-container">
+        <button data-section="section-produtos" class="button-style">Produtos</button>
+        <button data-section="section-clientes" class="button-style">Clientes</button>
+        <button data-section="section-atualizacoes" class="button-style">Atualizações</button>
+    </nav>
+    <main id="main-container">
+        <section id="section-produtos" class="section">
+            <h2>Produtos</h2>
+            <section class="section-container">
+
+                <nav class="navbar-section-container">
+                    <button id="button-adicionar-produto" class="style-button-navbar-section">
+                        Adicionar
+                    </button>
+                </nav>
+
+                <section id="produtos">                 
+                </section>
+
+                <section id="section-adicionar-produto">
+                    <div id="container-inputs-produto">
+
+                        <div class="box-container-input">
+                            <input type="text" id="nome-produto" placeholder="Nome do produto">
+                            <input type="text" id="fabricante-produto" placeholder="Nome do fabricante">
+                        </div>
+
+                        <div class="box-container-input">
+                            <input type="text" id="modelo-produto" placeholder="Modelo do produto">                            
+                            <input type="text" id="tipo-produto" placeholder="Tipo de produto">
+                        </div>
+
+                        <div class="box-container-input">                         
+                            <input type="text" id="preco-produto" placeholder="Preço do produto">                               
+                            <input type="text" id="estoque-produto" placeholder="Estoque do produto">                               
+                        </div>
+
+                        <p class="mensagem-info"></p>
+
+                    </div>
+                    <div id="container-button-section-adicionar-produto">
+                        <button id="button-cancelar-adicao-produto" class="button-style-section-adicionar">Cancelar</button>
+                        <button id="button-efetivar-adicao-produto" class="button-style-section-adicionar">Adicionar</button>
+                    </div>
+                </section>
+
+                <section id="section-info-produto">
+                    <h2>Informações do produto</h2>
+                    <section id="section-container-info">
+
+                        <div id="informacoes-produto">
+                        </div>
+
+                        <div id="container-button-info-produto">
+                            <button id="button-voltar-section-info">Voltar</button>
+                        </div>
+
+                    </section>
+                </section>
+
+                <section id="section-editar-produto">
+                    <h2>Edição do produto "<span id="nome-produto-edicao"></span>"</h2>
+                    <section id="section-container-editar">
+
+                        <div id="edicao-produto">                                     
+                            <input type="text" id="preco-produto-editar" placeholder="Preço do produto">                               
+                            <input type="text" id="estoque-produto-editar" placeholder="Estoque do produto">                               
+                        </div>
+
+                        <p class="mensagem-info"></p>
+
+                        <div id="container-button-editar-produto">
+                            <button id="button-voltar-section-editar" class="button-style-section-editar">Voltar</button>
+                            <button id="button-atualizar-section-editar" class="button-style-section-editar">Atualizar</button>
+                        </div>
+
+                    </section>
+                </section>
+
+            </section>
+        </section>
+        <section id="section-clientes" class="section" style="display: none;">
+            <h2>Clientes</h2>
+            <section id="section-container-clientes">
+                <section id="clientes-api"></section>
+            </section>
+        </section>
+        <section id="section-atualizacoes" class="section" style="display: none;">
+            <h2>Atualizações</h2>
+            <section id="section-container-atualizacoes">
+                <section id="atualizacoes-produtos"></section>
+            </section>
+        </section>
+    </main>
+    <script src="src/js/index.js" type="module"></script>
+</body>
+</html>
