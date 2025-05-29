@@ -25,7 +25,7 @@ Este é um sistema de controle de **produtos** desenvolvido com foco em usabilid
 
 ## 🔎 Clientes
 - Listagem de clientes com dados de uma API fake;
-- Template limpo e organizado para listar cada um;
+- Template limpo e organizado para listar cada cliente;
 - O box do cliente é composto por: nome, usuário e email;
 - Foi utilizado axios;
 - Seção extra, pensanda somente para fins de complementação. 
