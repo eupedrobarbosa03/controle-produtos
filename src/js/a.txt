@@ -1,6 +1,6 @@
 # 🧾 Sistema de Controle de Produtos
 
-- Project Page -> 🔗 [Controle Produtos](https://eupedrobarbosa03.github.io/password-generator/)
+- Project Page -> 🔗 [teste/)
 
 Este é um sistema de controle de **produtos** desenvolvido com foco em usabilidade e organização. Criado usando **HTML**, **CSS** e **JavaScript puro**, o projeto oferece uma interface amigável para gerenciar **cadastros de produtos**, com funcionalidades como adição, edição, exclusão, pesquisa e visualização.
 
